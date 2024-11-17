@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en" class="rv-html loading">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="./assets/img/fav.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <style>
+        body,
+        html {
+            background: #121212
+        }
+
+        .loading .rv-header {
+            transform: translateX(-100%);
+            height: 50px;
+            overflow: hidden
+        }
+
+        .loading img,
+        .loading svg {
+            width: 0;
+            height: 0
+        }
+
+        .rv-sec-container {
+            position: relative;
+            max-width: 1920px;
+            margin: 0 auto;
+            padding: 0
+        }
+
+        .rv-hero-banner .lozad {
+            display: block;
+            min-height: 500px
+        }
+
+        .lozad {
+            display: block;
+            min-height: 1rem
+        }
+
+        img.lozad {
+            transition: opacity 1s linear
+        }
+
+        img.lozad:not([data-loaded]) {
+            position: relative;
+            max-width: 100%;
+            height: auto;
+            opacity: 0
+        }
+
+        img.lozad[data-loaded=true] {
+            transition: opacity 1s linear
+        }
+
+        .rv-casestudyfigures .rv-box .lozad {
+            display: block;
+            min-height: 260px
+        }
+
+        /* @media (max-width: 767px) {
+            max-height: 260px
+        } */
+
+        .rv-hero-banner .rv-banner-pictures .video-js {
+            height: 100vh;
+            width: 100%;
+            padding: 0;
+            z-index: 0;
+            min-height: 450px;
+            max-height: 1200px
+        }
+
+        .rv-roundbtn {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: transparent;
+            border: 0;
+            padding: 0;
+            cursor: pointer
+        }
+
+        .rv-forms .rv-input,
+        .rv-forms .rv-textarea {
+            font-family: Gilroy-Regular, sans-serif, Helvetica, Verdana, Arial;
+            font-weight: 500;
+            text-transform: none;
+            font-size: 18px;
+            font-size: 1.125rem;
+            line-height: 1.66667;
+            line-height: 30px;
+            padding: 10px 0;
+            position: relative;
+            background: 0 0;
+            color: #fff;
+            height: 45px;
+            width: 100%;
+            outline: 0;
+            border: none;
+            caret-color: #7f38eb
+        }
+
+        @media (max-width:991px) {
+            .font-media {
+                font-size: 85%;
+            }
+        }
+    </style>
+    <script>window.onload = function () { document.querySelector('html').classList.remove('loading') }</script>
+
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/icons/favicon.ico">
+
+    <link rel="manifest" href="./assets/manifest.json">
+    <link rel="prefetch" href="./assets/img/sprite/svg-sprite.svg" as="image" crossorigin="anonymous">
+    <link rel="preload" name="Gilroy-Bold" href="./assets/fonts/Gilroy-Bold.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous">
+    <link rel="preload" name="Gilroy-Regular" href="./assets/fonts/Gilroy-Regular.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous">
+    <!-- Order is important -->
+    <link rel="prefetch" name="Gilroy-Thin" href="./assets/fonts/Gilroy-Thin.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous">
+    <link rel="prefetch" name="Gilroy-SemiBold" href="./assets/fonts/Gilroy-SemiBold.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous">
+    <link rel="prefetch" name="Gilroy-SemiBoldItalic" href="./assets/fonts/Gilroy-SemiBoldItalic.woff2" as="font"
+        type="font/woff2" crossorigin="anonymous">
+
+    <link rel="preload" href="./assets/css/vendors~main.css" as="style"
+        onload="this.rel='stylesheet'; this.onload = null;">
+    <link rel="preload" href="./assets/css/main.css" as="style" onload="this.rel='stylesheet'; this.onload = null;">
+    <link rel="preload" href="./assets/css/dark.css" as="style" onload="this.rel='stylesheet'; this.onload = null;">
+    <link rel="preload" href="./assets/css/light.css" as="style" onload="this.rel='stylesheet'; this.onload = null;">
+
+    <script>
+        window.rv = {};
+        window.rv.resourcePath = './assets/';
+    </script>
+
+    <script>
+        /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+        /* This file is meant as a standalone workflow for
+        - testing support for link[rel=preload]
+        - enabling async CSS loading in browsers that do not support rel=preload
+        - applying rel preload css once loaded, whether supported or not.
+        */
+        !function (t) { "use strict"; t.loadCSS || (t.loadCSS = function () { }); var e = loadCSS.relpreload = {}; if (e.support = function () { var e; try { e = t.document.createElement("link").relList.supports("preload") } catch (t) { e = !1 } return function () { return e } }(), e.bindMediaToggle = function (t) { var e = t.media || "all"; function a() { t.addEventListener ? t.removeEventListener("load", a) : t.attachEvent && t.detachEvent("onload", a), t.setAttribute("onload", null), t.media = e } t.addEventListener ? t.addEventListener("load", a) : t.attachEvent && t.attachEvent("onload", a), setTimeout(function () { t.rel = "stylesheet", t.media = "only x" }), setTimeout(a, 3e3) }, e.poly = function () { if (!e.support()) for (var a = t.document.getElementsByTagName("link"), n = 0; n < a.length; n++) { var o = a[n]; "preload" !== o.rel || "style" !== o.getAttribute("as") || o.getAttribute("data-loadcss") || (o.setAttribute("data-loadcss", !0), e.bindMediaToggle(o)) } }, !e.support()) { e.poly(); var a = t.setInterval(e.poly, 500); t.addEventListener ? t.addEventListener("load", function () { e.poly(), t.clearInterval(a) }) : t.attachEvent && t.attachEvent("onload", function () { e.poly(), t.clearInterval(a) }) } "undefined" != typeof exports ? exports.loadCSS = loadCSS : t.loadCSS = loadCSS }("undefined" != typeof global ? global : this);
+    </script>
+    <noscript>
+        <link rel="stylesheet" href="./assets/css/vendors~main.css" type="text/css">
+        <link rel="stylesheet" href="./assets/css/main.css">
+    </noscript>
+
+
+    <link href="./assets/css/base.css?v=1.13" rel="stylesheet" />
+
+    <title>Warum Social Media Marketing?</title>
+    <meta property="og:title" content="Warum Social Media Marketing?
+    " />
+    <!-- <meta name="keywords" content="Agency, Digital Agency, Experience Design, Revonic, Sitecore, UI, UX, Website" />
+    <meta name="description" content="The power and benefits of a mobile app over a website" />
+    <meta name="og:description" content="The power and benefits of a mobile app over a website" /> -->
+    <!-- <meta name="og:image" content=".//-/media/revonic/media/ogimage/rsz_web_and_mobile.jpg" />
+    <meta property="og:image:url"
+        content=".//-/media/revonic/media/ogimage/rsz_web_and_mobile.jpg">
+    <meta property="og:url" content="./en/News and Events/2019/12/The power of the mobile app" /> -->
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="../news-and-events.html/2019/12/the-power-of-the-mobile-app" />
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    './gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5K9P7WQ');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="Absenden"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-156926072-1');
+    </script>
+
+    <script>
+        // register service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js', { scope: '/' }).then(function (registration) { console.log('Service Worker Registered'); });
+            navigator.serviceWorker.ready.then(function (registration) { console.log('Service Worker Ready'); });
+        }
+    </script>
+
+</head>
+
+<body class="rv-body ">
+    <header class="rv-header rv-component rv-theme-dark" data-comp-name="header">
+        <div class="rv-wrapper">
+            <div class="rv-container container">
+
+
+                <a class="rv-logo rv-sticky-logo rv-column" href="./index.html"><span class="sr-only">Revonic</span>
+                    <!-- <img
+                        src="./assets/img/svg/light.svg" class="rv-revonic-logo light-variant"
+                        alt="rv-revonic-logo" /> -->
+                    <div><img style="max-width: 90%; margin-top: -13px;" src="./assets/img/logo.png" alt=""></div>
+                </a>
+
+                <div class="rv-navigation">
+                    <a class="rv-nav-trigger rv-link" href="javascript:;">
+                        <span class="rv-label d-lg-inline-block">Navigation</span>
+                        <div class="rv-nav-icon">
+                            <div class="rv-icon-content">
+                                <span class="sr-only">Show / Hide Navigation</span>
+                                <span class="rv-animated-icon rv-nav-iconbar-top d-block"></span>
+                                <span class="rv-animated-icon rv-nav-iconbar-bottom d-block"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="rv-caption d-none d-lg-block">
+                    <div class="rv-secondary-link">
+
+
+                        <a href="./kontaktier-uns.html" id="test" class="rv-link">Schreib uns</a>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+            <nav class="rv-nav-menu is-hidden">
+                <div class="rv-container container rv-fullWidth">
+                    <div class="w-100">
+
+                        <ul class="rv-list-main-nav">
+                            <!-- <li class="rv-list-item  row has-sub-menu">
+
+                                <a class="rv-h1 rv-link rv-nav-link col-lg-8" href="#" target="_self" id="">
+                                    Work </a>
+                                <div class="rv-sub-menu col-lg-4 d-lg-block">
+                                    <h6 class="rv-h6 rv-default">Case Studies</h6>
+
+
+                                    <ul class="rv-list-primary">
+                                        <li class="rv-list-item rv-secondary-link">
+                                            <a class="rv-h6 rv-link" href="#" target="_self"
+                                                id="gtm-NavigationEmirates">
+                                                Emirates Airline </a>
+                                        </li>
+                                        <li class="rv-list-item rv-secondary-link">
+                                            <a class="rv-h6 rv-link" href="#" target="_self"
+                                                id="gtm-NavigationMeraas">
+                                                Meraas </a>
+                                        </li>
+                                        <li class="rv-list-item rv-secondary-link">
+                                            <a class="rv-h6 rv-link" href="#" target="_self" id="">
+                                                U by Emaar </a>
+                                        </li>
+                                        <li class="rv-list-item rv-secondary-link">
+                                            <a class="rv-h6 rv-link" href="#" target="_self" id="">
+                                                The Red Sea Project </a>
+                                        </li>
+                                        <li class="rv-list-item rv-secondary-link">
+                                            <a class="rv-h6 rv-link" href="#" target="_self" id="">
+                                                Mercedes-Benz </a>
+                                        </li>
+                                        <li class="rv-list-item rv-secondary-link">
+                                            <a class="rv-h6 rv-link" href="#" target="_self"
+                                                id="">
+                                                Abu Dhabi Airport </a>
+                                        </li>
+                                        <li class="rv-list-item rv-secondary-link">
+                                            <a class="rv-h6 rv-link" href="#" target="_self" id="">
+                                                Noor Bank </a>
+                                        </li>
+                                        <li class="rv-list-item rv-secondary-link">
+                                            <a class="rv-h6 rv-link" href="#" target="_self" id="">
+                                                Emirates NBD </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li> -->
+                            <li class="rv-list-item  row has-sub-menu">
+
+                                <a class="rv-h1 rv-link rv-nav-link col-lg-8" href="./services.html" target="_self"
+                                    id="">
+                                    SERVICE </a>
+                                <div class="rv-sub-menu col-lg-4 d-lg-block">
+                                    <h6 class="rv-h6 rv-default">Our Services</h6>
+
+
+                                    <ul class="rv-list-primary">
+                                        <li class="rv-list-item rv-secondary-link">
+                                            <a class="rv-h6 rv-link" href="./strategieberatung.html" target="_self"
+                                                id="">
+                                                Strategie </a>
+                                        </li>
+                                        <li class="rv-list-item rv-secondary-link">
+                                            <a class="rv-h6 rv-link" href="./kundengewinnung.html" target="_self" id="">
+                                                Kundengewinnung </a>
+                                        </li>
+                                        <!-- <li class="rv-list-item rv-secondary-link">
+                                            <a class="rv-h6 rv-link" href="/en/services/user-research" target="_self"
+                                                id="">
+                                                User Research </a>
+                                        </li> -->
+                                        <!-- <li class="rv-list-item rv-secondary-link">
+                                            <a class="rv-h6 rv-link" href="/en/services/user-testing" target="_self"
+                                                id="">
+                                                User Testing </a>
+                                        </li>
+                                        <li class="rv-list-item rv-secondary-link">
+                                            <a class="rv-h6 rv-link" href="./social-media-betreuung.html"
+                                                target="_self" id="">
+                                                Data Analytics &amp; Insights </a>
+                                        </li> -->
+                                        <li class="rv-list-item rv-secondary-link">
+                                            <a class="rv-h6 rv-link" href="./mitarbeitergewinnung.html" target="_self"
+                                                id="">
+                                                Mitarbeitergewinnung </a>
+                                        </li>
+                                        <li class="rv-list-item rv-secondary-link">
+                                            <a class="rv-h6 rv-link" href="./social-media-betreuung.html" target="_self"
+                                                id="">
+                                                Social Media Betreuung </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="rv-list-item  ">
+
+                                <a class="rv-h1 rv-link rv-nav-link " href="./news-and-events.html" target="_self"
+                                    id="">
+                                    News &amp; Events </a>
+                            </li>
+                            <li class="rv-list-item  ">
+
+                                <a class="rv-h1 rv-link rv-nav-link " href="./careers.html" target="_self" id="">
+                                    Karriere </a>
+                            </li>
+                            <li class="rv-list-item  ">
+
+                                <a class="rv-h1 rv-link rv-nav-link " href="./kontaktier-uns.html" target="_self" id="">
+                                    Kontakt </a>
+                            </li>
+                        </ul>
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="#" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <section class="rv-sec-container headerpd rv-bg-light">
+
+        <h1 class="sr-only">Warum Social Media Marketing?</h1>
+        <div class="rv-hero-banner  rv-component rv-theme-light" data-comp-name="herobanner">
+            <div class="rv-banner-pictures">
+                <div class="rv-bgoverlay"></div>
+                <picture class="lozad" data-class="objectfit"
+                    data-iesrc="./-/media/revonic/banners/blog-images/power-of-the-mobile-app.jpg?cx=0.64&amp;cy=0.55&amp;cw=1440&amp;ch=810&amp;hash=69E0578BCB4CE81A2BF13A0342F3B685"
+                    data-alt="the power of">
+                    <source media="(max-width: 600px) and (orientation: portrait)"
+                        srcset="./-/media/revonic/banners/blog-images/power-of-the-mobile-app.jpg?cx=0.64&amp;cy=0.55&amp;cw=750&amp;ch=1334&amp;hash=D5101B79EB1E2FAB469E08B2A28739BB, ./-/media/revonic/banners/blog-images/power-of-the-mobile-app.jpg?cx=0.64&amp;cy=0.55&amp;cw=1500&amp;ch=2668&amp;hash=4478FBD9D357CCB26B465B35028F06D0 2x" />
+                    <source media="(min-width: 320px)"
+                        srcset="./-/media/revonic/banners/blog-images/power-of-the-mobile-app.jpg?cx=0.64&amp;cy=0.55&amp;cw=1440&amp;ch=810&amp;hash=69E0578BCB4CE81A2BF13A0342F3B685, ./-/media/revonic/banners/blog-images/power-of-the-mobile-app.jpg?cx=0.64&amp;cy=0.55&amp;cw=2880&amp;ch=1620&amp;hash=745F37357C19EC1E126982639699EC3C 2x" />
+                </picture>
+            </div>
+            <div class="container rv-container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h1 class="rv-hero-heading mb-2">
+                            <span class="rv-light-heading">Warum <strong class="rv-bold-heading font-media">Social Media
+                                    Marketing?</strong></span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <section class="rv-sec-content rv-bg-light">
+        <div class="container rv-container">
+            <div class="row">
+                <div class="col-12 col-lg-12 richtext">
+                    <p>Die verschiedenen Plattformen eignen sich hervorragend, um sich mit Kunden und Interessenten
+                        auszutauschen und um eigene Produkte zu präsentieren. <br><br>
+                        Und das Potenzial für erfolgreiche Werbung ist immens: Über die sozialen Netzwerke vergrößern
+                        Sie Ihre Reichweite, informieren Ihre Kunden effizienter und profitieren von den Möglichkeiten
+                        zur Neukundengewinnung. <br><br>
+                        Die folgenden Vorteile zeigen die Bedeutung für modernes erfolgreiches Marketing.
+                    </p>
+                    <h3 style="color: #7f38eb;">1. Geringer Aufwand mit großer Reichweite
+                    </h3>
+                    <p>Das Social Media-Marketing hilft Unternehmen, eine Community mit Kunden und Interessenten
+                        aufzubauen. Und gegenüber der Online-Werbung mit Google AdWords kann die Werbung in sozialen
+                        Netzwerken nachhaltiger sein:
+                    </p>
+                    <ul>
+                        <li>Bereits eine kleine und gut geplante Kampagne bei Facebook kann 100 neue Fans bedeuten.
+                        </li>
+                        <li>Sie können Ihren Usern regelmäßig – und nicht einmalig – neue Produkte präsentieren. Eine
+                            Kaufgarantie ist das zwar nicht, die Reichweite wächst jedoch stetig. Eine klassische Google
+                            AdWords-Kampagne hingegen führt zu einer kurzfristigen Steigerung der Besucherzahlen, die
+                            langfristige Effektivität ist aber häufig geringer.
+                        </li>
+                    </ul>
+                    <p>Nutzen Sie die Möglichkeiten und bauen Sie eine Community auf – begeisterte Kunden werden Ihre
+                        Produkte dann sogar teilen und somit an Freunde weiterempfehlen.
+                    </p>
+                    <h3 style="color: #7f38eb;">2. Einfach und mit System werben
+                    </h3>
+                    <p>Facebook, Twitter und Co. integrieren zahlreiche Statistik-Tools, die Ihnen bei der Analyse ihrer
+                        Kampagnen helfen. Auf einen Blick können Sie unter anderem erkennen…</p>
+                    <ul>
+                        <li>…wie viele Fans in einem bestimmten Zeitraum hinzugekommen sind
+                        </li>
+                        <li>…welches Produkt am häufigsten „geliked“ wurde</li>
+                        <li>…welche Beiträge die größte Reichweite erzielen</li>
+                    </ul>
+                    <p>So werten Sie den Kampagnenerfolg aus und lernen mehr über die Beliebtheit Ihrer eigenen
+                        Produkte.
+                    </p>
+                    <p style="background-color: #f2f2f2;
+                    "><strong>💡 Tipp: </strong> &nbsp; Erstellen Sie immer zwei Werbeanzeigen parallel, bei denen sich
+                        eine
+                        Eigenschaft
+                        unterscheidet
+                        und vergleichen Sie die Ergebnisse miteinander. So lernen Sie am besten, was bei Ihren Usern gut
+                        ankommt und Sie können künftig Ihre Anzeigen noch besser gestalten.
+                    </p>
+
+                    <h3 style="color: #7f38eb;">3. Social Media für besseren Kundensupport nutzen
+                    </h3>
+                    <p>Die Kommunikationsmöglichkeiten der Social Media-Plattformen lassen sich hervorragend für den
+                        Kundensupport nutzen: Beantworten Sie Fragen der Kunden schnell und freundlich, sind diese
+                        zufrieden und bedanken sich häufig sogar mit einem „Like“ oder teilen den Inhalt, wodurch sich
+                        die Reichweite zusätzlich vergrößert – ein klarer Vorteil gegenüber einer klassischen Hotline.
+                    </p>
+                    <p>Heute gehört der Support in den sozialen Netzwerken für viele Unternehmen bereits zum Alltag: Die
+                        Deutsche Bahn und die Telekom verfügen beispielsweise über Abteilungen für die Kundenbetreuung
+                        über soziale Netzwerke.</p>
+                    <p><strong>Der Austausch mit der Community bietet gute Gelegenheiten, sich auch öffentlich
+                            kundenfreundlich und kundenorientiert zu präsentieren</strong><br /></p>
+                    <h3 style="color: #7f38eb;">4. Empfehlungen fördern den Verkauf enorm
+                    </h3>
+                    <p>Im Jahr 2014 hat „Harris Interactive“ für die „Webby Awards“ eine <a
+                            href="http://webbyawards.com/press/press-releases/internet-has-democratized-the-culture-of-early-adoption-among-everyday-consumers-according-to-the-webbys/">
+                            Umfrage zum Thema Social
+                            Media-Marketing </a> durchgeführt.
+                        Das Ergebnis: 68 Prozent der befragten User im Alter von 18-34 Jahren sind eher an Produkten
+                        interessiert, die Freunde über die Social Media-Plattformen empfehlen.
+
+                    </p>
+                    <p>Empfehlungen und geteilte Inhalte verbreiten sich automatisch weiter – ideal für alle
+                        Werbetreibenden. Durch Hashtags und Kommentare kommunizieren Kunden mit Ihnen und über Ihr
+                        Unternehmen, Blogs werden gefüllt und Links zu Ihren Social Media-Seiten eingefügt.</p>
+                    <h3 style="color: #7f38eb;">5. Mögliche virale Effekte nutzen
+
+                    </h3>
+                    <p>Social Media-User teilen am liebsten Zitate, Bilder und Videos. Nutzen Sie das zu Ihren Gunsten.
+                        Mit der richtigen Werbung lässt sich ein viraler Marketingeffekt erzeugen – ein Traum für alle
+                        Werber.
+
+
+                    </p>
+                    <p>Der Effekt: Ihr Unternehmen stellt einen neuen Beitrag auf seine Seite, woraufhin Ihre Community
+                        durch liken, teilen und kommentieren interagiert. Freunde der Nutzer sehen dies und liken,
+                        kommentieren oder teilen den Beitrag möglicherweise ebenfalls – ein riesiges Potenzial zur
+                        Erhöhung Ihrer Reichweite.</p>
+                    <h3 style="color: #7f38eb;">6. Social Media für Social Recruiting nutzen
+
+                    </h3>
+                    <p>Der Fachkräftemangel stellt viele Unternehmen vor Herausforderungen. Sie müssen sich gegen
+                        Konkurrenten durchsetzen. Ein gutes Image und die Präsenz in den sozialen Medien können dabei
+                        helfen. Nicht nur potenzielle Kunden, sondern auch potenzielle neue Mitarbeiter nutzen die
+                        sozialen Netzwerke, weshalb sich die Veröffentlichung von Stellenanzeigen auf den Plattformen
+                        anbietet. Mit dieser modernen Art und Weise des Personalmarketings begeistern Sie die
+                        qualifizierten Fachkräfte garantiert für Ihr Unternehmen.
+
+
+
+                    </p>
+                    <h3 style="color: #7f38eb;">Los geht’s!
+
+
+                    </h3>
+                    <p>Sie sehen, gibt es einige gute Gründe, weshalb Ihr Unternehmen in den sozialen Netzwerken sein
+                        sollte.
+                        Vereinbaren Sie jetzt einen kostenfreien Call mit uns und wir analysieren Ihre Ist-Situation.
+
+
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="rv-sec-content rv-bg-light pt-0">
+        <div class="container rv-container">
+            <div>
+                <div>
+                    <div style="text-align:center;">
+                        <a class="rv-primary-link d-inline-flex" href="./news-and-events.html">gehen zurück</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="downloadformpop" class="rv-bg-dark contact-popup-gallery" style="display:none;">
+        <div class="cwarp">
+            <h3 class="rv-h2 rv-form-title m-0">Please fill in some details for us </h3>
+            <div class="rv-contact rv-component">
+                <div class="rv-contact-section">
+                    <div class="rv-form-container rv-component" data-comp-name="inputfields">
+
+                        <form class="rv-contact-form js-validate-download rv-component" data-comp-name="downloads"
+                            data-action="/api/downloads/download" id="downloadForm" name="download-form" method="post"
+                            autocomplete="off" data-link="" data-contact-email="" data-is-known-contact="False"
+                            data-download-key="">
+                            <input name="__RequestVerificationToken" type="hidden"
+                                value="HoP5BCLQOaYeueJFlK6xYdLG3sjDVFeMSwG4XrSmJysyDA_4Vrmhay7gnLGthgV4b9_pOkGNoRJKgrVxIbhnK7QNYvPaDM9NWqpeBJ2kYt81" />
+                            <input type="hidden" value="FMI8jmP3opG0MRk+DjobAvk7rAktVrh++IJhlTu3nCEYQfYfWwH0EQ=="
+                                id="hdnGoalId" name="GoalId" />
+                            <input type="hidden" value="05RGubXoNYbPFhgXQ7o6vQ==" id="hdnGoalText" name="GoalText" />
+                            <input type="hidden" id="hdnDownloadPath" name="DownloadPath" />
+
+                            <div class="form-group rv-forms">
+                                <input type="text" id="firstName" name="FirstName"
+                                    class="form-control-plaintext rv-input js-input-focus" data-rule-fullname="true"
+                                    data-msg="Please enter your first name" autocomplete="off" required>
+                                <label for="firstname" class="rv-label">First name</label>
+                                <svg class="rv-error-icon rv-toSvg">
+                                    <use xlink:href="./assets/img/sprite/svg-sprite.svg#icon-warning"></use>
+                                </svg>
+                            </div>
+                            <div class="form-group rv-forms">
+                                <input type="text" id="lastName" name="LastName"
+                                    class="form-control-plaintext rv-input js-input-focus" data-rule-fullname="true"
+                                    data-msg="Please enter your last name" autocomplete="off" required>
+                                <label for="lastName" class="rv-label">Last name</label>
+                                <svg class="rv-error-icon rv-toSvg">
+                                    <use xlink:href="./assets/img/sprite/svg-sprite.svg#icon-warning"></use>
+                                </svg>
+                            </div>
+
+                            <div class="form-group rv-forms rv-email">
+                                <input id="email" name="Email" class="form-control-plaintext rv-input js-input-focus"
+                                    type="email" data-rule-validEmail="true"
+                                    data-msg-validEmail="Please enter a valid email address"
+                                    data-msg="Please enter your email" autocomplete="off" required>
+                                <label for="email" class="rv-label">Email</label>
+                                <svg class="rv-error-icon rv-toSvg">
+                                    <use xlink:href="./assets/img/sprite/svg-sprite.svg#icon-warning"></use>
+                                </svg>
+                            </div>
+
+                            <div class="form-group rv-forms">
+                                <input type="text" id="company-name" name="CompanyName"
+                                    class="form-control-plaintext rv-input js-input-focus" data-rule-fullname="true"
+                                    data-msg="Please enter company name" autocomplete="off" required>
+                                <label for="company-name" class="rv-label">Company name<span
+                                        class="text -danger"></label>
+                                <svg class="rv-error-icon rv-toSvg">
+                                    <use xlink:href="./assets/img/sprite/svg-sprite.svg#icon-warning"></use>
+                                </svg>
+                            </div>
+
+                            <div class="form-group rv-forms">
+                                <input id="job-title" name="JobTitle" data-rule-required="true"
+                                    class="form-control-plaintext rv-input js-input-focus" data-rule-jobtitle="true"
+                                    data-msg="Please enter job title" autocomplete="off" required>
+                                <label for="job-title" class="rv-label">Job Title<span class="text -danger"></label>
+                                <svg class="rv-error-icon rv-toSvg">
+                                    <use xlink:href="./assets/img/sprite/svg-sprite.svg#icon-warning"></use>
+                                </svg>
+                            </div>
+                            <div class="rv-message-btn rv-boldbutton rv-component">
+                                <button class="btn-bold rv-component" type="submit">
+                                    <span class="rv-text-fill" data-btn-label="Send message">Download</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="rv-footer rv-component rv-theme-dark" data-comp-name="footer">
+        <div class="container rv-container">
+            <div class="row rv-fullWidth rv-footer-content">
+                <div class="rv-contact-message col-lg-6 col-md-12">
+
+                    <h3 class="rv-h6 rv-default-label rv-skewed-line">Sag Hallo</h3>
+                    <h2 class="rv-h1 rv-title">Bock auf mehr?</h2>
+                    <h4 class="rv-h6 rv-primary-link float-left"><a id="gtm-letstalkfooter"
+                            href="./kontaktier-uns.html">Schreib uns.</a>
+                        <p>
+                    </h4>
+                </div>
+                <address class="rv-address-block rv-quick-contacts col-lg-3 col-md-4">
+
+                    <h6 class='rv-h6 rv-default-label'>Kontakt</h6>
+                    <ul class="rv-list-secondary">
+                        <li class="rv-list-item  ">
+
+                            <a class="rv-link rv-nav-link " href="./kontaktier-uns.html" target="_self" id="GTM001">
+                                Schreib uns eine Email </a>
+                        </li>
+                        <li class="rv-list-item  ">
+
+                            <a class="rv-link rv-nav-link " href="https://meetings-eu1.hubspot.com/florian-mueller"
+                                target="_self" id="">
+                                Termin vereinbaren </a>
+                        </li>
+                    </ul>
+
+
+
+
+
+
+
+
+                </address>
+                <!-- <address class="rv-address-block rv-address col-lg-3 col-md-4">
+
+                    <h6 class='rv-h6 rv-default-label'>Visit</h6>
+                    <ul class="rv-list-secondary rv-regular">
+                        <li class="rv-list-item">Level 46, Tower B</li>
+                        <li class="rv-list-item">Business Central Towers</li>
+                        <li class="rv-list-item">Media City, Dubai</li>
+                    </ul>
+                    <ul class="rv-list-secondary">
+                        <li class="rv-list-item  ">
+
+                            <a class="rv-link rv-nav-link "
+                                href="#/maps/place/REVONIC/@25.1004538,55.1673033,17z/data=!3m1!4b1!4m5!3m4!1s0x3e5f6bc02f741831:0x3fd4128e657a3681!8m2!3d25.100449!4d55.169492"
+                                target="_blank" id="">
+                                Get directions </a>
+                        </li>
+                    </ul>
+
+
+
+
+
+
+
+
+                </address> -->
+                <address class="rv-address-block rv-social-links col-lg-3 col-md-4">
+
+                    <h6 class='rv-h6 rv-default-label'>Folge uns </h6>
+                    <ul class="rv-list-secondary d-flex">
+                        <li style="padding-right: .5rem;" class="rv-list-item  ">
+
+                            <a class="rv-link rv-nav-link " href="https://www.facebook.com/brandartist.agentur"
+                                target="_blank" id="">
+                                <i class="fab fa-facebook fa-2x"></i>
+                            </a>
+                        </li>
+                        <li style="padding-right: .5rem;" class="rv-list-item  ">
+
+                            <a class="rv-link rv-nav-link " href="https://www.instagram.com/Teambrandartist/"
+                                target="_blank" id="">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                        </li>
+                        <li style="padding-right: .5rem;" class="rv-list-item  ">
+
+                            <a class="rv-link rv-nav-link " href="#" target="_blank" id="">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="rv-list-item  ">
+
+                            <a class="rv-link rv-nav-link " href="#" target="_blank" id="">
+                                <i class="fab fa-twitter fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+
+
+
+
+
+
+
+                </address>
+            </div>
+            <div class="rv-fullWidth rv-footer-links row">
+                <div class="rv-links col-md-6">
+
+
+                </div>
+
+                <span class="rv-copyrights col-md-6 ">&copy; 2021 Brandartist | <a href="./impressum.html"> Impressum
+                    </a> | <a href="./datenschutz.html">Datenschutz</a> </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/vendors~main.js?v=1.13" defer></script>
+    <script src="./assets/js/main.js?v=1.13" defer></script>
+</body>
+
+</html>
